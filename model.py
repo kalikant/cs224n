@@ -1,0 +1,22 @@
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+
+QA_MODELS = [
+    "bert-large-uncased-whole-word-masking-finetuned-squad", # https://arxiv.org/abs/1810.04805  https://huggingface.co/bert-large-uncased-whole-word-masking-finetuned-squad/tree/main
+    "sultan/BioM-ELECTRA-Large-SQuAD2" # https://huggingface.co/sultan/BioM-ELECTRA-Large-SQuAD2
+]
+
+model_name = "bert-large-uncased-whole-word-masking-finetuned-squad"
+nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+QA_input = {
+    'question': 'sexual abuse?',
+    'context': """Suzi is a nine-year-old girl living in a residential treatment center since she was six years old. Suzi was severely abused and neglected by her birth mother and other adults who were in and out of the home. Records indicate that Suzi experienced severe sexual abuse as a child when she was residing with her father. At age 2 and ½, Suzi’s maternal uncle and aunt became her and her older brother’s legal guardian. They are loving, caring and invested in her care. Suzy’s aunt and uncle have two children of their own but have been unable to handle her behaviors in their home although they still take care of her brother. They relinquished custody of Suzi and she is now in the custody of the state and has been in and out of several foster placements before coming to the residential treatment center. It was determined that due to the past abuse it is not a viable option for Suzy to live with her biological mother or father. In addition Suzi expresses great fear that she will have to go to live with her mother again and will be “hurt.” These expressions of fear are after visits from her biological mother. Her father had been incarcerated for the abuse of her older brother. The location of her father has not been known for several years.
+She is struggling with the fact that there have been several “families” in her life, but the one family with which she wants terribly to belong to (her uncle and aunt) has not currently able to have her live with them. This family feels that they are unable to meet her needs and the safety of the other children would be compromised if Suzi returned to their home at this time unless they received considerable in-home assistance. Aunt and Uncle are both employed. He is a delivery truck driver who works the morning shift and she works at a local motel during the afternoon shift. Neither have any physical or emotional problems nor is there any evidence of substance abuse. They own their own home which they maintain well. They have not visited Suzi consistently while she has been in residential treatment, but state their willingness to take her into their home ‘under the right circumstances’.
+Suzi does well in school academically, however she school records indicate that she is loud, hyper, oppositional and argumentative with peers and staff. Her peer relationships have been testy and confrontational. She has made verbal threats to hurt her peers, but she has not acted on her threats.
+Suzi has difficulty coping with feelings of anger, rejection, depression and anxiety as she becomes aggressive, oppositional and defiant. She does not injure others with her aggression but she often destroys belongings. She has denied any thoughts of suicide. She has difficulty accepting limits and following directions of adults and authority figures. She becomes easily frustrated and will act out aggressively (e.g, by pushing chairs, slamming doors) during group activities. In addition Suzy has poor personal boundaries, difficulty forming meaningful attachments, wetting herself when she is angry, soiling herself, inappropriate touching of peers, impulsivity, low self esteem, feels unwanted, has poor social judgment and has conflicting feelings towards foster care which all contribute to her poor social adjustment. Attempts to obtain a foster family for Suzi have failed because of her oppositional behavior and the significant problem of her encopresis. She is able to control her bowel movements in school and rarely soils herself, there but she continues to soil herself on a regular basis in the RTC. Her personal hygiene has been variable."""
+}
+res = nlp(QA_input)
+
+model = AutoModelForQuestionAnswering.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+print(res)
