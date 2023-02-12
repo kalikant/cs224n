@@ -1,0 +1,239 @@
+Please refer this page for more details ==> http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
+
+
+WASSA-2017 Shared Task on Emotion Intensity (EmoInt)
+
+Part of the 8th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis (WASSA-2017), which is to be held in conjunction with EMNLP-2017.
+
+I am interested. How do I get going?
+This task has concluded, but go here for the next iteration: SemEval-2018 Task 1 Affect in Tweets.
+
+
+
+Announcements:
+
+June 29, 2017: An interactive visualization of the Tweet Emotion Intensity Dataset is available.
+May 23, 2017: Even though the WASSA-2017 competition has concluded, the CodaLab competition website continues to remain open. Existing teams can submit new runs, and new teams are welcome to signup and upload their submissions on the test data. Register your team and enter system details here.
+May 23, 2017: Details about writing and reviewing of system-description papers (and link to submit paper) are available here.
+May 23, 2017: Official results are available here. The CodaLab leaderboard has been made public. Gold intensity labels for the test set are now available.
+May 17, 2017: Evaluation period has concluded. We received submissions from 22 teams. Enter your team and system details here.
+May 11, 2017: Evaluation period deadline has been extended to May 16, 2017.
+May 10, 2017: Note the slight change in what constiutes the official submission here.
+May 1, 2017: Test set released (without intensity labels). Also see note there on number of official submissions allowed per team.
+April 27, 2017: Gold intensity labels for the development set released.
+March 8, 2017: CodaLab competition website is now online.
+March 8, 2017: An updated version of the anger training set is now available. There was a bug in the annotation platform which resulted in some annotations not being available earlier. This issue has now been resolved.
+ACTION ITEM: If you have downloaded the anger training data prior to this notice, then please download the (updated) anger training set again. The scores for most instances still remain the same, although, some instances now have a slightly different score.
+February 24, 2017: Train and dev sets, evaluation script, and a baseline weka system are available for download.
+Background and Significance: Existing emotion datasets are mainly annotated categorically without an indication of degree of emotion. Further, the tasks are almost always framed as classification tasks (identify 1 among n emotions for this sentence). In contrast, it is often useful for applications to know the degree to which an emotion is expressed in text. This is the first task where systems have to automatically determine the intensity of emotions in tweets.
+
+Task: Given a tweet and an emotion X, determine the intensity or degree of emotion X felt by the speaker -- a real-valued score between 0 and 1. The maximum possible score 1 stands for feeling the maximum amount of emotion X (or having a mental state maximally inclined towards feeling emotion X). The minimum possible score 0 stands for feeling the least amount of emotion X (or having a mental state maximally away from feeling emotion X). The tweet along with the emotion X will be referred to as an instance. Note that the absolute scores have no inherent meaning -- they are used only as a means to convey that the instances with higher scores correspond to a greater degree of emotion X than instances with lower scores.
+
+This task can be cited as shown below :
+
+WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to Subjectivity, Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark.
+BibTex
+
+Data: Training and test datasets are provided for four emotions: joy, sadness, fear, and anger. For example, the anger training dataset has tweets along with a real-valued score between 0 and 1 indicating the degree of anger felt by the speaker. The test data includes only the tweet text. Gold emotion intensity scores will be released after the evaluation period. Below is the authoritative paper on the Tweet Emotion Intensity Dataset (the dataset used in this competition):
+
+Emotion Intensities in Tweets. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the sixth joint conference on lexical and computational semantics (*Sem), August 2017, Vancouver, Canada.
+BibTex
+
+June 29, 2017: An interactive visualization of the Tweet Emotion Intensity Dataset is now available.
+
+Training set:
+
+for anger (updated Mar 8, 2017)
+for fear (released Feb 17, 2017)
+for joy (released Feb 15, 2017)
+for sadness (released Feb 17, 2017)
+
+Development set
+
+Without intensity labels:
+for anger (released Feb 24, 2017)
+for fear (released Feb 24, 2017)
+for joy (released Feb 24, 2017)
+for sadness (released Feb 24, 2017)
+
+With intensity labels:
+for anger (released Apr 27, 2017)
+for fear (released Apr 27, 2017)
+for joy (released Apr 27, 2017)
+for sadness (released Apr 27, 2017)
+
+Note: For your competition submission for the test set, you are allowed to train on the combined Training and Development sets.
+
+This is a *small* set of data that can be used to tune one’s system, but is provided mainly so that one can test submitting output on CodaLab. Please make sure you try submitting your system output on the development set through the CodaLab website, and address any issues that may come up as a result of that, well before evaluation period. Test data will have a format identical to the development set, but it will be much larger in size.
+Note: Since the dev set is small in size, results on the data may not be indicative of performance on the test set.
+
+This study has been approved by the NRC Research Ethics Board (NRC-REB) under protocol number 2017-98. REBreview seeks to ensure that research projects involving humans as participants meet Canadian standards of ethics.
+
+Test set
+
+Without intensity labels:
+for anger (released May 1, 2017)
+for fear (released May 1, 2017)
+for joy (released May 1, 2017)
+for sadness (released May 1, 2017)
+
+With intensity labels:
+for anger (released May 24, 2017)
+for fear (released May 24, 2017)
+for joy (released May 24, 2017)
+for sadness (released May 24, 2017)
+
+See terms of use at the bottom of the page.
+
+Here are some key points about test-phase submissions:
+Each team can submit as many as ten submissions during the evaluation period. However, only the final submission will be considered as the official submission to the competition.
+You will not be able to see results of your submission on the test set.
+You will be able to see any warnings and errors for each of your submission.
+Leaderboard is disabled.
+Special situations will be considered on a case by case basis. If you have reached the limit of ten submissions and there are extenuating circumstances due to which you need to make one more submission, send us an email before the evaluation period deadline (May 16, 2017), and we will likely remove one of your earlier submissions.
+Once the competition is over, we will release the gold labels and you will be able to determine results on various system variants you may have developed. We encourage you to report results on all of your systems (or system variants) in the system-description paper. However, we will ask you to clearly indicate the result of your official submission.
+Submission format:
+
+System submissions must to have the same format as used in the training and test sets. Each line in the file should include:
+id[tab]tweet[tab]emotion[tab]score
+Simply replace the NONEs in the last column of the test files with your system's predictions.
+Manual Annotation: Manual annotation of the dataset to obtain real-valued scores was done through Best-Worst Scaling (BWS), an annotation scheme shown to obtain very reliable scores (Kiritchenko and Mohammad, 2016). The data is then split into a training set and a test set. The test set released at the start of the evaluation period will not include the real-valued sentiment scores. These scores for the test data, which we will refer to as the Gold data, will be released after evaluation, when the results are posted.
+
+The emotion intensity scores for both training and test data are obtained by crowdsourcing. Standard crowdsourcing best practices were followed such as pre-annotating 5% to 10% of questions internally (by one of the task organizers). These pre-annnotations were used to randomly check quality of crowdsourced responses and inform annotators of errors as and when they make them. (This has been shown to significantly improve annotation quality).
+
+Evaluation: For each emotion, systems are evaluated by calculating the Pearson Correlation Coefficient with Gold ratings. The correlation scores across all four emotions will be averaged to determine the bottom-line competition metric by which the submissions will be ranked.
+
+Additional metrics: In addition to the bottom-line competition metric described above, the following additional metrics will be provided:
+
+Spearman Rank Coefficient of the submission with the gold scores of the test data.
+Motivation: Spearman Rank Coefficient considers only how similar the two sets of ranking are. The differences in scores between adjacently ranked instance pairs is ignored. On the one hand this has been argued to alleviate some biases in Pearson, but on the other hand it can ignore relevant information.
+
+Correlation scores (Pearson and Spearman) over a subset of the test data formed by taking every instance with a gold emotion intensity score greater than or equal to 0.5.
+Motivation: In some applications, only those instances that are moderately or strongly emotional are relevant. Here it may be much more important for a system to correctly determine emotion intensities of instances in the higher range of the scale as compared to correctly determine emotion intensities in the lower range of the scale.
+Note that both these additional metrics will be calculated from the same submission zip described above. (Participants need not provide anything extra for these additional metrics.)
+The official evaluation script (which also acts as a format checker) is available here. You may want to run it on the training set to determine your progress, and eventually on the test set to check the format of your submission.
+
+Web Hosting of the Competition: The entire competition will be hosted on CodaLab Competitions (https://competitions.codalab.org/). A direct link to the Emotion Intensity CodaLab competition is here.
+
+Directions on participating via CodaLab are here.
+
+(CodaLab has been used in many research evaluation competitions in the past such as Microsoft COCO Image Captioning Challenge and SemEval-2017.)
+
+Paper: Participants will be given the opportunity to write a system-description paper that describes their system, resources used, results, and analysis. This paper will be part of the official WASSA-2017 proceedings. The paper is to be at most six pages long plus two pages at most for references. The papers are to follow the format and style files provided by EMNLP-2017. Further details about writing and reviewing of system-description papers by participants are available here.
+
+Schedule:
+
+Training data ready: Data for anger, fear, and joy are already available; data for sadness will be made available in the second half of February 2017
+Evaluation period starts: May 02, 2017
+Evaluation period ends: May 14 May 16, 2017
+Results posted: May 21, 2017
+System description paper submission deadline: June 10 June 18, 2017
+Author notifications : July 9, 2017
+Camera ready submissions due: July 23, 2017
+Best-Worst Scaling Questionnaires and Directions to Annotators
+
+Obtaining real-valued sentiment annotations has several challenges. Respondents are faced with a higher cognitive load when asked for real-valued sentiment scores for terms as opposed to simply classifying terms as either positive or negative. It is also difficult for an annotator to remain consistent with his/her annotations. Further, the same sentiment association may map to different sentiment scores in the minds of different annotators; for example, one annotator may assign a score of 0.6 and another 0.8 for the same degree of positive association. One could overcome these problems by providing annotators with pairs of terms and asking which is more positive (a comparative approach), however that requires a much larger set of annotations (order N2, where N is the number of terms to be annotated).
+
+Best-Worst Scaling (BWS), also sometimes referred to as Maximum Difference Scaling (MaxDiff), is an annotation scheme that exploits the comparative approach to annotation (Louviere and Woodworth, 1990; Cohen, 2003; Louviere et al., 2015; Kiritchenko and Mohammad, 2016) while still keeping the number of required annotations small. Annotators are given four items (4-tuple) and asked which item is the Best (highest in terms of the property of interest) and which is the Worst (least in terms of the property of interest). These annotations can then be easily converted into real-valued scores of association between the items and the property, which eventually allows for creating a ranked list of items as per their association with the property of interest.
+
+The questionnaires used to annotate the data are available here:
+
+for anger
+for fear
+for joy
+for sadness
+Resources
+
+Baseline Weka System for Determining Emotion Intensity
+
+You are free to build a system from scratch using any available software packages and resources, as long as they are not against the spirit of fair competition. In order to assist testing of ideas, we also provide a baseline emotion intensity system that you can build on. The use of this system is completely optional. The system is available here. Instructions for using the system with the the task data are available here.
+
+Word-Emotion and Word-Sentiment Association lexicons
+
+Large lists of manually created and automatically generated word-emotion and word-sentiment association lexicons are available here.
+
+Organizers of the shared task:
+
+Saif M. Mohammad
+saif.mohammad@nrc-cnrc.gc.ca
+National Research Council Canada
+Felipe Bravo-Marquez
+fbravoma@waikato.ac.nz
+The University of Waikato
+
+Alexandra Balahur
+alexandra.balahur@jrc.ec.europa.eu
+European Commission, Brussels
+
+Other Related Shared Tasks
+
+SemEval-2018 Task 1: Detecting Affect Intensities in Tweets
+Determining Sentiment Intensity of English and Arabic Phrases
+References:
+
+Picard, R. W. (1997, 2000). Affective computing. MIT press.
+Using Hashtags to Capture Fine Emotion Categories from Tweets. Saif M. Mohammad, Svetlana Kiritchenko, Computational Intelligence, Volume 31, Issue 2, Pages 301-326, May 2015.
+Crowdsourcing a Word-Emotion Association Lexicon, Saif Mohammad and Peter Turney, Computational Intelligence, 29 (3), 436-465, 2013.
+Ekman, P. (1992). An argument for basic emotions. Cognition and Emotion, 6 (3), 169-200.
+#Emotional Tweets, Saif Mohammad, In Proceedings of the First Joint Conference on Lexical and Computational Semantics (*Sem), June 2012, Montreal, Canada.
+Portable Features for Classifying Emotional Text, Saif Mohammad, In Proceedings of the 2012 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, June 2012, Montreal, Canada.
+Strapparava, C., & Mihalcea, R. (2007). Semeval-2007 task 14: Affective text. In Proceedings of SemEval-2007, pp. 70-74, Prague, Czech Republic.
+From Once Upon a Time to Happily Ever After: Tracking Emotions in Novels and Fairy Tales, Saif Mohammad, In Proceedings of the ACL 2011 Workshop on Language Technology for Cultural Heritage, Social Sciences, and Humanities (LaTeCH), June 2011, Portland, OR.
+Plutchik, R. (1980). A general psychoevolutionary theory of emotion. Emotion: Theory, research, and experience, 1(3), 3-33.
+Stance and Sentiment in Tweets. Saif M. Mohammad, Parinaz Sobhani, and Svetlana Kiritchenko. Special Section of the ACM Transactions on Internet Technology on Argumentation in Social Media, In Press.
+Determining Word-Emotion Associations from Tweets by Multi-Label Classification. Felipe Bravo-Marquez, Eibe Frank, Saif Mohammad, and Bernhard Pfahringer. In Proceedings of the 2016 IEEE/WIC/ACM International Conference on Web Intelligence (WI'16), Omaha, Nebraska, USA.
+Challenges in Sentiment Analysis. Saif M. Mohammad, A Practical Guide to Sentiment Analysis, Springer, 2016.
+Osgood, C. E., Suci, G. J., & Tannenbaum, P. (1957). The measurement of meaning. University of Illinois Press.
+Capturing Reliable Fine-Grained Sentiment Associations by Crowdsourcing and Best-Worst Scaling. Svetlana Kiritchenko and Saif M. Mohammad. In Proceedings of the 15th Annual Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. June 2016. San Diego, CA.
+Ortony, A., Clore, G. L., & Collins, A. (1988). The Cognitive Structure of Emotions. Cambridge University Press.
+Semeval-2016 Task 7: Determining Sentiment Intensity of English and Arabic Phrases. Svetlana Kiritchenko, Saif M. Mohammad, and Mohammad Salameh. In Proceedings of the International Workshop on Semantic Evaluation (SemEval-16). June 2016. San Diego, California.
+Alm, C. O. (2008). Affect in text and speech. ProQuest.
+Aman, S., & Szpakowicz, S. (2007). Identifying expressions of emotion in text. In Text, Speech and Dialogue, Vol. 4629 of Lecture Notes in Computer Science, pp. 196-205.
+The Effect of Negators, Modals, and Degree Adverbs on Sentiment Composition. Svetlana Kiritchenko and Saif M. Mohammad, In Proceedings of the NAACL 2016 Workshop on Computational Approaches to Subjectivity, Sentiment, and Social Media (WASSA), June 2014, San Diego, California.
+Sentiment Analysis: Detecting Valence, Emotions, and Other Affectual States from Text. Saif M. Mohammad, Emotion Measurement, 2016.
+NRC-Canada-2014: Detecting Aspects and Sentiment in Customer Reviews, Svetlana Kiritchenko, Xiaodan Zhu, Colin Cherry, and Saif M. Mohammad. In Proceedings of the eighth international workshop on Semantic Evaluation Exercises (SemEval-2014), August 2014, Dublin, Ireland.
+Barrett, L. F. (2006). Are emotions natural kinds?. Perspectives on psychological science, 1(1), 28-58.
+
+
+Designated Contact Person:
+
+Dr. Saif M. Mohammad
+Senior Research Officer at NRC (and one of the creators of the resource on this page)
+saif.mohammad@nrc-cnrc.gc.ca
+
+Terms of Use:
+
+All rights for the resource(s) listed on this page are held by National Research Council Canada.
+
+The resources listed here are available free for research purposes. If you make use of them, cite the paper(s) associated with the resource in your research papers and articles.
+
+If interested in commercial use of any of these resources, send email to the designated contact person. A nominal one-time licensing fee may apply.
+
+If referenced in news articles and online posts, then cite the resource appropriately. For example: "This application/product/tool makes use of the <resource name>, created by <author(s)> at the National Research Council Canada." If possible, hyperlink the resource name to this page.
+
+If you use the resource in a product or application, then acknowledge this in the 'About' page and other relevant documentation of the application by stating the name of the resource, the authors, and NRC. For example: "This application/product/tool makes use of the <resource name>, created by <author(s)> at the National Research Council Canada." If possible, hyperlink the resource name to this page.
+
+Do not redistribute the resource/data. Direct interested parties to this page. They can also email the designated contact person.
+
+If you create a derivative resource from one of the resources listed on this page:
+
+Please ask users to cite the source data paper (in addition to your paper).
+
+Do not distribute the source data. See #6 above.
+Examples of derivative resources include: translations into other languages, added annotations to the text instances, aggregations of multiple datasets, etc.
+
+If you are interested in uploading our resource on a third-party website or to include the resource in any collection/aggregate of datasets, then:
+
+Email the designated contact person to begin the process to obtain permission.
+
+After obtaining permission, any curator of datasets that includes a resource listed here must take steps to ensure that users of the aggregate dataset still cite the papers associated with the individual datasets. This includes at minimum: stating this clearly in the README and providing the citing information of the source dataset.
+By default, no one other than the creators of the resource have permission to upload the resource on a third-party website or to include the resource in any collection/aggregate of datasets.
+
+National Research Council Canada (NRC) disclaims any responsibility for the use of the resource(s) listed on this page and does not provide technical support. However, the contact listed above will be happy to respond to queries and clarifications.
+
+If you send us an email, we will be thrilled to know about how you have used the resource.
+
+
+
+
+

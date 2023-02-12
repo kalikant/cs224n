@@ -11,3 +11,8 @@ sentencepiece
 sacrebleu
 tensorboard
 transformers
+torch
+tensorboardX
+pytorch-pretrained-bert
+transformers datasets
+pytorch_pretrained_bert
