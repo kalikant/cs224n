@@ -9,8 +9,8 @@ tokenizer = AutoTokenizer.from_pretrained("emilyalsentzer/Bio_ClinicalBERT")
 model = AutoModelForSequenceClassification.from_pretrained("emilyalsentzer/Bio_ClinicalBERT", num_labels=2)
 
 # data path
-questionare_data_path=r"C:\Users\kalik\PycharmProjects\cs224n\datasets\CANS\questionare"
-vignette_data_path = r"C:\Users\kalik\PycharmProjects\cs224n\datasets\CANS\vignette"
+questionare_data_path="datasets/CANS/questionare"
+vignette_data_path = "datasets/CANS/vignette"
 
 # Create the dataset object
 dataset = CANSDataset(questionare_data_path, vignette_data_path)

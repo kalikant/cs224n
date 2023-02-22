@@ -7,8 +7,8 @@ import os
 tokenizer = AutoTokenizer.from_pretrained("emilyalsentzer/Bio_ClinicalBERT")
 
 # data path
-questionare_data_path=r"C:\Users\kalik\PycharmProjects\cs224n\datasets\CANS\questionare"
-vignette_data_path = r"C:\Users\kalik\PycharmProjects\cs224n\datasets\CANS\vignette"
+questionare_data_path="datasets/CANS/questionare"
+vignette_data_path = "datasets/CANS/vignette"
 
 # Data model
 class CANSDataModel:
